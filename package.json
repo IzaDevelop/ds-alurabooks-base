@@ -35,16 +35,16 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "lib-base",
-  "author": "izabelle santos",
-  "module": "dist/lib-base.esm.js",
+  "name": "lib-base-ds-alurabook",
+  "author": "iza_develop",
+  "module": "dist/lib-base-ds-alurabook.esm.js",
   "size-limit": [
     {
-      "path": "dist/lib-base.cjs.production.min.js",
+      "path": "dist/lib-base-ds-alurabook.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/lib-base.esm.js",
+      "path": "dist/lib-base-ds-alurabook.esm.js",
       "limit": "10 KB"
     }
   ],
