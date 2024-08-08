@@ -1,23 +1,38 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-const ButtonStyle = styled.button`
-    background: #EB9B00;
+export interface AbButtonProps {
+    text?: string;
+    type?: 'primary' | 'secondary';
+    onClick?: () => void;
+}
+
+const ButtonStyle = styled.button<AbButtonProps>`
+    background: ${(props: AbButtonProps) => props.type === 'primary' ? '#EB9B00' : '#FFF'};
     padding: 16px 32px;
     border: 1px solid #EB9B00;
-    color: #FFF;
+    color: ${(props: AbButtonProps) => props.type === 'primary' ? '#FFF' : '#EB9B00'};
     font-size: 20px;
     cursor: pointer;
-    &:hover {
-        background: #BB7900;
-        border: 1px solid #BB7900;
-    }
+    ${(props: AbButtonProps) => props.type === 'primary'
+        ? css`
+        &:hover {
+            background: #BB7900;
+            border: 1px solid #BB7900;
+        }`
+        : css`
+        &:hover {
+            background: #FFF;
+            border: 1px solid #B87900;
+            color: #B87900;
+        }`
+    };
 `
 
-export const AbButton = () => {
+export const AbButton = ({ text, type = 'primary', onClick }: AbButtonProps) => {
     return (
-        <ButtonStyle>
-            Clique Aqui!
+        <ButtonStyle onClick={onClick} type={type}>
+            {text}
         </ButtonStyle>
     )
 }
